@@ -9,7 +9,7 @@ say "Hello " + $customerName + ", we received note that your house may be on fir
 log "The home inhabitants are called " + $customerName
 
 owner_at_home = ask "Are you at home?", {
-    :choices => "yes, no", :voice =>"tom"}
+    :choices => "yes, no"}
 
 say "You said " + owner_at_home.value, {:voice => "tom"}
 
