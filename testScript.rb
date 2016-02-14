@@ -1,4 +1,4 @@
-call "+00491622681244"
+call "+491622681244"
 $customerName= "peter"
 say "Hello " + $customerName + ", we received note that your house may be on fire!"
 
