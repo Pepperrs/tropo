@@ -11,7 +11,7 @@
 
 # requires the following
 # https://api.tropo.com/1.0/sessions?action=create
-# &token=TOKEN
+# &token=5a4168777877505150566d51764652554f6f6161494950624d72635a4456534159496d69454d4d487649534c
 # &customerTelephone=14075551212
 # &customerName=John+Dyer
 # &neighbourTelephone=123132123123
@@ -19,6 +19,13 @@
 
 
 def main()
+$customerTelephone="openberlin3.gen@cisco.com"
+$customerName="Peter Miller"
+$neighbourTelephone="openberlin3.gen@cisco.com"
+$neighbourName="Sascha Kraut"
+
+  callHomeInhabitant()
+  callNeighbours()
 
 
 end
@@ -114,3 +121,7 @@ end
 def callFiredepartment()
 
 end
+
+
+
+main()
