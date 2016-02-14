@@ -71,7 +71,8 @@ def inhabitantDialog(owner_at_home)
     home_on_fire = ask "Is there a fire?", {
         :choices => "yes, no"}
     if home_on_fire.value=="yes"
-      say "we will connect you to the fire department."
+      say "the fire department is on its way."
+      callFireDepartment
     else
       say "thank you for checking. be safe!"
     end
