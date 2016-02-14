@@ -19,10 +19,10 @@
 
 
 def main()
-$customerTelephone="openberlin3.gen@cisco.com"
-$customerName="Peter Miller"
-$neighbourTelephone="openberlin3.gen@cisco.com"
-$neighbourName="Sascha Kraut"
+  $customerTelephone="openberlin3.gen@cisco.com"
+  $customerName="Peter Miller"
+  $neighbourTelephone='openberlin3.gen@cisco.com'
+  $neighbourName="Sascha Kraut"
 
   callHomeInhabitant
   callNeighbours
@@ -33,7 +33,7 @@ end
 
 def callHomeInhabitant()
 
-  call '+' + $customerTelephone, {:voice => "tom"}
+  call $customerTelephone, {:voice => "tom"}
 
   owner_at_home = greetInhabitant()
 
@@ -80,14 +80,13 @@ end
 
 
 def callNeighbours()
-  call '+' + $neighbourTelephone, {:voice => "tom"}
+  call $neighbourTelephone, {:voice => "tom"}
 
   neighbour_at_home = greetInhabitant()
 
   inhabitantDialog(neighbour_at_home)
 
   log "The inhabitants are at home: " + neighbour_at_home.value
-
 
 
 end
@@ -126,10 +125,9 @@ def neighbourDialog(neighbour_at_home)
 end
 
 
-def callFiredepartment()
+def callFireDepartment()
 
 end
 
 
-
-main()
+main
