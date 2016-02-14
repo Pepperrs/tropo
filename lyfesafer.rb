@@ -19,10 +19,10 @@
 
 
 def main()
-  $customerTelephone="openberlin3.gen@cisco.com"
-  $customerName="Peter Miller"
-  $neighbourTelephone='openberlin3.gen@cisco.com'
-  $neighbourName="Sascha Kraut"
+  $customerTelephone||="openberlin3.gen@cisco.com"
+  $customerName||="Peter Miller"
+  $neighbourTelephone||='openberlin3.gen@cisco.com'
+  $neighbourName||="Sascha Kraut"
 
   callHomeInhabitant
   hangup
