@@ -14,7 +14,9 @@
 # &token=TOKEN
 # &customerTelephone=14075551212
 # &customerName=John+Dyer
-# &msg=the+sky+is+falling
+# &neighbourTelephone=123132123123
+# &neighbourName=Jane+Dyer
+#
 
 
 def callHomeInhabitant()
@@ -24,7 +26,6 @@ def callHomeInhabitant()
   owner_at_home = greetInhabitant()
 
   inhabitantDialog(owner_at_home)
-
 
   log "The inhabitants are at home: " + owner_at_home.value
 
