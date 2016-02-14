@@ -27,12 +27,12 @@ def main()
   inhabitant_at_home = callHomeInhabitant
   hangup
   if inhabitant_at_home == 1
-    neighboursathome =callNeighbours
+    neighboursathome = callNeighbours
     hangup
   end
 
-  end
-  if neighboursathome
+
+  if (neighboursathome  == 1 or inhabitant_at_home == 2)
     callFireDepartment
     hangup
   end
@@ -79,7 +79,7 @@ def inhabitantDialog(owner_at_home)
     if home_on_fire.value=="yes"
       say "the fire department is on its way."
       callFireDepartment
-      return (0)
+      return (2)
     else
       say "thank you for checking. be safe!"
       return (0)
