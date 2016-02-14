@@ -24,8 +24,8 @@ $customerName="Peter Miller"
 $neighbourTelephone="openberlin3.gen@cisco.com"
 $neighbourName="Sascha Kraut"
 
-  callHomeInhabitant()
-  callNeighbours()
+  callHomeInhabitant
+  callNeighbours
 
 
 end
@@ -33,7 +33,7 @@ end
 
 def callHomeInhabitant()
 
-  call '+' + $customerTelephone
+  call '+' + $customerTelephone, {:voice => "tom"}
 
   owner_at_home = greetInhabitant()
 
@@ -48,14 +48,14 @@ end
 # explains the situation and returns if someone is at home
 def greetInhabitant()
 
-  say "Hello " + $customerName + ", we received note that your house may be on fire!", {:voice => "tom"}
+  say "Hello " + $customerName + ", we received note that your house may be on fire!"
 
   log "The home inhabitants are called " + $customerName
 
   atHome= ask "Are you at home?", {
-      :choices => "yes, no", :voice => "tom"}
+      :choices => "yes, no"}
 
-  say "You said " + atHome.value, {:voice => "tom"}
+  say "You said " + atHome.value
 
   return atHome
 
@@ -65,14 +65,14 @@ end
 def inhabitantDialog(owner_at_home)
   if owner_at_home.value=="yes"
     home_on_fire = ask "Is there a fire?", {
-        :choices => "yes, no", :voice => "tom"}
+        :choices => "yes, no"}
     if home_on_fire.value=="yes"
-      say "we will connect you to the fire department.", {:voice => "tom"}
+      say "we will connect you to the fire department."
     else
-      say "thank you for checking. be safe!", {:voice => "tom"}
+      say "thank you for checking. be safe!"
     end
   else
-    say " we will call your neighbours to check in on your home.", {:voice => "tom"}
+    say " we will call your neighbours to check in on your home."
   end
 
 
@@ -80,6 +80,14 @@ end
 
 
 def callNeighbours()
+  call '+' + $neighbourTelephone, {:voice => "tom"}
+
+  neighbour_at_home = greetInhabitant()
+
+  inhabitantDialog(neighbour_at_home)
+
+  log "The inhabitants are at home: " + neighbour_at_home.value
+
 
 
 end
@@ -87,14 +95,14 @@ end
 # explains the situation and returns if someone is at home
 def greetNeighbour()
 
-  say "Hello " + $neighbourName + ", we received note that your house may be on fire!", {:voice => "tom"}
+  say "Hello " + $neighbourName + ", we received note that your house may be on fire!"
 
   log "Called the neighbours named " + $customerName
 
   atHome= ask "Are you at home?", {
-      :choices => "yes, no", :voice => "tom"}
+      :choices => "yes, no"}
 
-  say "You said " + atHome.value, {:voice => "tom"}
+  say "You said " + atHome.value
 
   return atHome
 
@@ -104,14 +112,14 @@ end
 def neighbourDialog(neighbour_at_home)
   if neighbour_at_home.value=="yes"
     home_on_fire = ask "Is there a fire?", {
-        :choices => "yes, no", :voice => "tom"}
+        :choices => "yes, no"}
     if home_on_fire.value=="yes"
-      say "we will connect you to the fire department.", {:voice => "tom"}
+      say "we will connect you to the fire department."
     else
-      say "thank you for checking. be safe!", {:voice => "tom"}
+      say "thank you for checking. be safe!"
     end
   else
-    say "we will call the fire department to check it out", {:voice => "tom"}
+    say "we will call the fire department to check it out"
   end
 
 
