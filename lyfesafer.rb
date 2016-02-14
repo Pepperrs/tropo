@@ -96,7 +96,7 @@ def callNeighbours()
 
   neighbour_at_home = greetNeighbour
 
-  inhabitantDialog(neighbour_at_home)
+  neighbourDialog(neighbour_at_home)
 
   log "The inhabitants are at home: " + neighbour_at_home.value
 
