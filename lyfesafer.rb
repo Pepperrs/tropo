@@ -16,7 +16,12 @@
 # &customerName=John+Dyer
 # &neighbourTelephone=123132123123
 # &neighbourName=Jane+Dyer
-#
+
+
+def main()
+
+
+end
 
 
 def callHomeInhabitant()
@@ -68,6 +73,39 @@ end
 
 
 def callNeighbours()
+
+
+end
+
+# explains the situation and returns if someone is at home
+def greetNeighbour()
+
+  say "Hello " + $neighbourName + ", we received note that your house may be on fire!"
+
+  log "Called the neighbours named " + $customerName
+
+  atHome= ask "Are you at home?", {
+      :choices => "yes, no"}
+
+  say "You said " + atHome.value
+
+  return atHome
+
+end
+
+
+def neighbourDialog(neighbour_at_home)
+  if neighbour_at_home.value=="yes"
+    home_on_fire = ask "Is there a fire?", {
+        :choices => "yes, no"}
+    if home_on_fire.value=="yes"
+      say "we will connect you to the fire department."
+    else
+      say "thank you for checking. be safe!"
+    end
+  else
+    say "we will call the fire department to check it out"
+  end
 
 
 end

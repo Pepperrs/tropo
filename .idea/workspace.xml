@@ -38,11 +38,9 @@
       <file leaf-file-name="lyfesafer.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lyfesafer.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3472081">
-              <caret line="18" column="2" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
-              <folding>
-                <element signature="e#928#1216#0" expanded="false" />
-              </folding>
+            <state vertical-scroll-proportion="2.0639594">
+              <caret line="113" column="24" selection-start-line="113" selection-start-column="24" selection-end-line="113" selection-end-column="24" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -319,7 +317,13 @@
       <option name="project" value="LOCAL" />
       <updated>1455442053340</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="update workspace.xml &amp; lyfesafer.rb&#10;&#10;added api commands">
+      <created>1455442473160</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1455442473160</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TodoView">
@@ -392,7 +396,8 @@
     <MESSAGE value="update lyfesafer.rb&#10;&#10;callHomeInhabitant now has code to call the inhabitnats and ask if there is a fire" />
     <MESSAGE value="refactored lyfesafer&#10;&#10;split inhabitant dialog into multiple parts" />
     <MESSAGE value="update workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="update workspace.xml" />
+    <MESSAGE value="update workspace.xml &amp; lyfesafer.rb&#10;&#10;added api commands" />
+    <option name="LAST_COMMIT_MESSAGE" value="update workspace.xml &amp; lyfesafer.rb&#10;&#10;added api commands" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -449,11 +454,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lyfesafer.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3472081">
-          <caret line="18" column="2" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="2" />
-          <folding>
-            <element signature="e#928#1216#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="2.0639594">
+          <caret line="113" column="24" selection-start-line="113" selection-start-column="24" selection-end-line="113" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>
