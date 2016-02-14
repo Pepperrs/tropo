@@ -25,7 +25,11 @@ def main()
   $neighbourName="Sascha Kraut"
 
   callHomeInhabitant
+  hangup
   callNeighbours
+  hangup
+  callFireDepartment
+  hangup
 
 
 end
