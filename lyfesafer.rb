@@ -24,12 +24,18 @@ def main()
   $neighbourTelephone||='openberlin3.gen@cisco.com'
   $neighbourName||="Sascha Kraut"
 
-  callHomeInhabitant
+  inhabitant_at_home = callHomeInhabitant
   hangup
-  callNeighbours
-  hangup
-  callFireDepartment
-  hangup
+  if inhabitant_at_home == 1
+    neighboursathome =callNeighbours
+    hangup
+  end
+
+  end
+  if neighboursathome
+    callFireDepartment
+    hangup
+  end
 
 
 end
@@ -41,9 +47,9 @@ def callHomeInhabitant()
 
   owner_at_home = greetInhabitant()
 
-  inhabitantDialog(owner_at_home)
-
   log "The inhabitants are at home: " + owner_at_home.value
+
+  return inhabitantDialog(owner_at_home)
 
 
 end
@@ -73,21 +79,22 @@ def inhabitantDialog(owner_at_home)
     if home_on_fire.value=="yes"
       say "the fire department is on its way."
       callFireDepartment
+      return (0)
     else
       say "thank you for checking. be safe!"
+      return (0)
     end
   else
     say " we will call your neighbours to check in on your home."
+    return(1) #not home
   end
-
-
 end
 
 
 def callNeighbours()
   call $neighbourTelephone, {:voice => "tom"}
 
-  neighbour_at_home = greetInhabitant()
+  neighbour_at_home = greetNeighbour
 
   inhabitantDialog(neighbour_at_home)
 
@@ -99,7 +106,7 @@ end
 # explains the situation and returns if someone is at home
 def greetNeighbour()
 
-  say "Hello " + $neighbourName + ", we received note that your house may be on fire!"
+  say "Hello " + $neighbourName + ", we received note that your neighbours home may be on fire!"
 
   log "Called the neighbours named " + $customerName
 
@@ -119,11 +126,14 @@ def neighbourDialog(neighbour_at_home)
         :choices => "yes, no"}
     if home_on_fire.value=="yes"
       say "we will connect you to the fire department."
+      return(1)
     else
       say "thank you for checking. be safe!"
+      return(0)
     end
   else
     say "we will call the fire department to check it out"
+    return(1)
   end
 
 
