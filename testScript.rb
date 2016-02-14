@@ -1,4 +1,5 @@
-call "+491622681244"
+call "openberlin3.gen@cisco.com"
+
 $customerName= "peter"
 say "Hello " + $customerName + ", we received note that your house may be on fire!"
 
